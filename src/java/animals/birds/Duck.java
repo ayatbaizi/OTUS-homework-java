@@ -1,11 +1,11 @@
-package Animals.Birds;
+package animals.birds;
 
-public class Duck extends Animal implements Flying {
+public class Duck extends animals.Animal implements Animals.Birds.Flying {
     public Duck(String name, int age, int weight, String color) {
         super(name, age, weight, color);
     }
 
-    protected void say() {
+    public void say() {
         System.out.println("КРЯ");
     }
 

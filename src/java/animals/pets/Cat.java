@@ -1,4 +1,6 @@
-package Animals.Pets;
+package animals.pets;
+
+import animals.Animal;
 
 public class Cat extends Animal {
 
@@ -8,7 +10,7 @@ public class Cat extends Animal {
 
 
     @Override
-    protected void say() {
+    public void say() {
         System.out.println("МЯУ");
 
     }

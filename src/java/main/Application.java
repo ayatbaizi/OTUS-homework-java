@@ -1,14 +1,28 @@
-import Animals.Animal;
-import Animals.Pets.Cat;
-import Animals.Pets.Dog;
-import Animals.Birds.Duck;
-import Data.Commands;
+package main;
+
+
+import animals.Animal;
+import animals.birds.Duck;
+import animals.pets.Cat;
+import animals.pets.Dog;
+import data.Commands;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Application {
+    public static void copypast(Scanner sc){
+        // Scanner sc = new Scanner(System.in);
+        System.out.println("Какое имя у животного?");
+        String name = sc.next();
+        System.out.println("Какой возраст у животного?");
+        int age = sc.nextInt();
+        System.out.println("Какой вес животного?");
+        int weight = sc.nextInt();
+        System.out.println("Укажите цвет животного?");
+        String color = sc.next();
+    }
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -22,14 +36,7 @@ public class Application {
                     System.out.println("Какое животное(cat/dog/duck) добавить?");
                     String animalType = sc.next();
                     if (animalType.equals("cat")) {
-                        System.out.println("Какое имя у животного?");
-                        String name = sc.next();
-                        System.out.println("Какой возраст у животного?");
-                        int age = sc.nextInt();
-                        System.out.println("Какой вес животного?");
-                        int weight = sc.nextInt();
-                        System.out.println("Укажите цвет животного?");
-                        String color = sc.next();
+                        copypast(sc);
                         Cat animal = new Cat(name, age, weight, color);
                         animal.say();
                         animals.add(animal);
