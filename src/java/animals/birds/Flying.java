@@ -1,4 +1,4 @@
-package Animals.Birds;
+package animals.birds;
 
 public interface Flying {
     void fly();
