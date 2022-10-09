@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Application {
-    public static void copypast(Scanner sc){
-        // Scanner sc = new Scanner(System.in);
+    public static void inputData(Class clas){
+        Scanner sc = new Scanner(System.in);
         System.out.println("Какое имя у животного?");
         String name = sc.next();
         System.out.println("Какой возраст у животного?");
@@ -28,7 +28,7 @@ public class Application {
         Scanner sc = new Scanner(System.in);
         List<Animal> animals = new ArrayList<>();
 //menu commands: add, list, exit
-        while (true) {
+        {
             System.out.println("Введите команду(add/list/exit): ");
             Commands userCommand = Commands.valueOf(sc.next().toUpperCase().trim());
             switch (userCommand) {
@@ -36,7 +36,7 @@ public class Application {
                     System.out.println("Какое животное(cat/dog/duck) добавить?");
                     String animalType = sc.next();
                     if (animalType.equals("cat")) {
-                        copypast(sc);
+                        inputData();
                         Cat animal = new Cat(name, age, weight, color);
                         animal.say();
                         animals.add(animal);
@@ -80,5 +80,6 @@ public class Application {
             }
         }
     }
+
 }
 
