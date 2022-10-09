@@ -1,18 +1,58 @@
 package animals;
 
+import java.util.Scanner;
+
 public class Animal {
     protected String name;
     protected int age;
     protected int weight;
     protected String color;
 
+
     public Animal(String name, int age, int weight, String color) {
+        inputAnimalParametrs();
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.color = color;
+        //System.out.println(name, age, weight, color);
     }
 
+
+    public void inputAnimalParametrs() {
+        Scanner sc = new Scanner(System.in);
+        name = sc.next();
+        age = sc.nextInt();
+        weight = sc.nextInt();
+        color = sc.next();
+        return (name, age, weight, color);
+    }
+
+   /* public void inputAnimalParametrs() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Какое имя у животного?");
+        String name = sc.next();
+        System.out.println("Какой возраст у животного?");
+        int age = sc.nextInt();
+        System.out.println("Какой вес животного?");
+        int weight = sc.nextInt();
+        System.out.println("Укажите цвет животного?");
+        String color = sc.next();
+    }*/
+
+
+    /*public static void inputData(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Какое имя у животного?");
+        String name = sc.next();
+        System.out.println("Какой возраст у животного?");
+        int age = sc.nextInt();
+        System.out.println("Какой вес животного?");
+        int weight = sc.nextInt();
+        System.out.println("Укажите цвет животного?");
+        String color = sc.next();
+
+    }*/
     public String getName() {
         return name;
     }
@@ -45,7 +85,7 @@ public class Animal {
         this.color = color;
     }
 
-    protected void say() {
+    public void say() {
         System.out.println("Я говорю");
     }
 
