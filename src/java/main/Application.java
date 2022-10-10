@@ -26,7 +26,8 @@ public class Application {
                     System.out.println("Какое животное(cat/dog/duck) добавить?");
                     String animalType = sc.next();
                     if (animalType.equals("cat")) {
-                        Cat animal = new Cat();
+
+                        Cat animal = new Cat(name, age, weight, color);
                         animal.say();
                         animals.add(animal);
                     } else if (animalType.equals("dog")) {

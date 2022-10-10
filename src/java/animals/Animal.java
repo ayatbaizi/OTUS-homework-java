@@ -10,23 +10,27 @@ public class Animal {
 
 
     public Animal(String name, int age, int weight, String color) {
-        inputAnimalParametrs();
-        this.name = name;
-        this.age = age;
-        this.weight = weight;
-        this.color = color;
+        inputAnimalParametr();
+        this.name = getName();
+        this.age = getAge();
+        this.weight = getWeight();
+        this.color = getColor();
+
         //System.out.println(name, age, weight, color);
     }
-
-
-    public void inputAnimalParametrs() {
+    public void inputAnimalParametr() {
         Scanner sc = new Scanner(System.in);
-        name = sc.next();
+       /* name = sc.next();
         age = sc.nextInt();
         weight = sc.nextInt();
-        color = sc.next();
-        return (name, age, weight, color);
+        color = sc.next();*/
+        setName(name = sc.next());
+        setAge(age = sc.nextInt());
+        setWeight(weight = sc.nextInt());
+        setColor(color = sc.next());
     }
+
+
 
    /* public void inputAnimalParametrs() {
         Scanner sc = new Scanner(System.in);
