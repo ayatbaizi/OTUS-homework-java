@@ -24,49 +24,31 @@ public class Application {
                     case ADD:
                         System.out.println("Какое животное(cat/dog/duck) добавить?");
                         String animalType = sc.next();
+                        Animal animal = null;
+                        System.out.println("Какое имя у животного?");
+                        String name = sc.next();
+                        System.out.println("Какой возраст у животного?");
+                        int age = sc.nextInt();
+                        System.out.println("Какой вес животного?");
+                        int weight = sc.nextInt();
+                        System.out.println("Укажите цвет животного?");
+                        String color = sc.next();
                         if (animalType.equals("cat")) {
-                            inputAnimalParametrs();
-                            System.out.println("Какое имя у животного?");
-                            String name = sc.next();
-                            System.out.println("Какой возраст у животного?");
-                            int age = sc.nextInt();
-                            System.out.println("Какой вес животного?");
-                            int weight = sc.nextInt();
-                            System.out.println("Укажите цвет животного?");
-                            String color = sc.next();
-                            Cat animal = new Cat(name, age, weight, color);
-                            animal.say();
-                            animals.add(animal);
+                            animal = new Cat(name, age, weight, color);
                         } else if (animalType.equals("dog")) {
-                            System.out.println("Какое имя у животного?");
-                            String name = sc.next();
-                            System.out.println("Какой возраст у животного?");
-                            int age = sc.nextInt();
-                            System.out.println("Какой вес животного?");
-                            int weight = sc.nextInt();
-                            System.out.println("Укажите цвет животного?");
-                            String color = sc.next();
-                            Dog animal = new Dog(name, age, weight, color);
-                            animal.say();
-                            animals.add(animal);
+                            animal = new Dog(name, age, weight, color);
                         } else if (animalType.equals("duck")) {
-                            System.out.println("Какое имя у животного?");
-                            String name = sc.next();
-                            System.out.println("Какой возраст у животного?");
-                            int age = sc.nextInt();
-                            System.out.println("Какой вес животного?");
-                            int weight = sc.nextInt();
-                            System.out.println("Укажите цвет животного?");
-                            String color = sc.next();
-                            Duck animal = new Duck(name, age, weight, color);
-                            animal.say();
-                            animal.fly();
-                            animals.add(animal);
+                            animal = new Duck(name, age, weight, color);
+                        }
+                        animal.say();
+                        animals.add(animal);
+                        if (animal instanceof Duck){
+                            ((Duck) animal).fly();
                         }
                         break;
                     case LIST:
-                        for (Animal animal : animals) {
-                            System.out.println(animal);
+                        for (Animal anim : animals) {
+                            System.out.println(anim);
                         }
                         break;
                     case EXIT:
@@ -79,17 +61,6 @@ public class Application {
         }
 
     }
-
-    public static void inputAnimalParametrs() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Какое имя у животного?");
-        String name = sc.next();
-        System.out.println("Какой возраст у животного?");
-        int age = sc.nextInt();
-        System.out.println("Какой вес животного?");
-        int weight = sc.nextInt();
-        System.out.println("Укажите цвет животного?");
-        String color = sc.next();
-    }
 }
+
 
