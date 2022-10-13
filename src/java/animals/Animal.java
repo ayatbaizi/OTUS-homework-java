@@ -1,62 +1,18 @@
 package animals;
 
-import java.util.Scanner;
-
-public class Animal {
+public abstract class Animal {
     protected String name;
     protected int age;
     protected int weight;
     protected String color;
 
-
     public Animal(String name, int age, int weight, String color) {
-        inputAnimalParametr();
-        this.name = getName();
-        this.age = getAge();
-        this.weight = getWeight();
-        this.color = getColor();
-
-        //System.out.println(name, age, weight, color);
-    }
-    public void inputAnimalParametr() {
-        Scanner sc = new Scanner(System.in);
-       /* name = sc.next();
-        age = sc.nextInt();
-        weight = sc.nextInt();
-        color = sc.next();*/
-        setName(name = sc.next());
-        setAge(age = sc.nextInt());
-        setWeight(weight = sc.nextInt());
-        setColor(color = sc.next());
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.color = color;
     }
 
-
-
-   /* public void inputAnimalParametrs() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Какое имя у животного?");
-        String name = sc.next();
-        System.out.println("Какой возраст у животного?");
-        int age = sc.nextInt();
-        System.out.println("Какой вес животного?");
-        int weight = sc.nextInt();
-        System.out.println("Укажите цвет животного?");
-        String color = sc.next();
-    }*/
-
-
-    /*public static void inputData(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Какое имя у животного?");
-        String name = sc.next();
-        System.out.println("Какой возраст у животного?");
-        int age = sc.nextInt();
-        System.out.println("Какой вес животного?");
-        int weight = sc.nextInt();
-        System.out.println("Укажите цвет животного?");
-        String color = sc.next();
-
-    }*/
     public String getName() {
         return name;
     }
@@ -66,26 +22,32 @@ public class Animal {
     }
 
     public int getAge() {
+
         return age;
     }
 
     public void setAge(int age) {
+
         this.age = age;
     }
 
     public int getWeight() {
+
         return weight;
     }
 
     public void setWeight(int weight) {
+
         this.weight = weight;
     }
 
     public String getColor() {
+
         return color;
     }
 
     public void setColor(String color) {
+
         this.color = color;
     }
 
