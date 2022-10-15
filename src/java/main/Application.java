@@ -18,20 +18,20 @@ public class Application {
 //menu commands: add, list, exit
         {
             while (true) {
-                System.out.println("Введите команду(add/list/exit): ");
+                System.out.println("Р’РІРµРґРёС‚Рµ РєРѕРјР°РЅРґСѓ(add/list/exit): ");
                 Commands userCommand = Commands.valueOf(sc.next().toUpperCase().trim());
                 switch (userCommand) {
                     case ADD:
-                        System.out.println("Какое животное(cat/dog/duck) добавить?");
+                        System.out.println("РљР°РєРѕРµ Р¶РёРІРѕС‚РЅРѕРµ(cat/dog/duck) РґРѕР±Р°РІРёС‚СЊ?");
                         String animalType = sc.next();
                         Animal animal = null;
-                        System.out.println("Какое имя у животного?");
+                        System.out.println("РљР°РєРѕРµ РёРјСЏ Сѓ Р¶РёРІРѕС‚РЅРѕРіРѕ?");
                         String name = sc.next();
-                        System.out.println("Какой возраст у животного?");
+                        System.out.println("РљР°РєРѕР№ РІРѕР·СЂР°СЃС‚ Сѓ Р¶РёРІРѕС‚РЅРѕРіРѕ?");
                         int age = sc.nextInt();
-                        System.out.println("Какой вес животного?");
+                        System.out.println("РљР°РєРѕР№ РІРµСЃ Р¶РёРІРѕС‚РЅРѕРіРѕ?");
                         int weight = sc.nextInt();
-                        System.out.println("Укажите цвет животного?");
+                        System.out.println("РЈРєР°Р¶РёС‚Рµ С†РІРµС‚ Р¶РёРІРѕС‚РЅРѕРіРѕ?");
                         String color = sc.next();
                         if (animalType.equals("cat")) {
                             animal = new Cat(name, age, weight, color);
@@ -52,10 +52,10 @@ public class Application {
                         }
                         break;
                     case EXIT:
-                        System.out.println("Программа заверешена");
+                        System.out.println("РџСЂРѕРіСЂР°РјРјР° Р·Р°РІРµСЂРµС€РµРЅР°");
                         System.exit(0);
                     default:
-                        System.out.println("Неверная команда, используйте add, list, exit");
+                        System.out.println("РќРµРІРµСЂРЅР°СЏ РєРѕРјР°РЅРґР°, РёСЃРїРѕР»СЊР·СѓР№С‚Рµ add, list, exit");
                 }
             }
         }
