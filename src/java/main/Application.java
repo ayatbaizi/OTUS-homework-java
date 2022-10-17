@@ -64,6 +64,9 @@ public class Application {
                         case EXIT:
                             System.out.println("Программа заверешена");
                             System.exit(0);
+//                    default:
+//                        System.out.println("Неверная команда, используйте add, list, exit");
+
                     }
                 }
             }
