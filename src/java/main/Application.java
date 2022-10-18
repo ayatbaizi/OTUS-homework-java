@@ -16,10 +16,12 @@ public class Application {
         Scanner sc = new Scanner(System.in);
         List<Animal> animals = new ArrayList<>();
 
-//menu commands: add, list, exit
+
         {
             while (true) {
-                boolean check = false;
+                // поверка на совпадение введенной команды и перечеслений Commands
+                String userInput = CheckInputConsole.checkingMenuCommandsInput();
+                /*boolean check = false;
                 System.out.println("Введите команду(add/list/exit): ");
                 String userInput = sc.next();
                 for (Commands commands : Commands.values()) {
@@ -30,19 +32,21 @@ public class Application {
                 }
                 if (!check) {
                     System.out.println("Неверная команда! Введите корректную команду!");
-                } else {
+                } else */{
+                    //меню commands: add, list, exit
                     Commands userCommand = Commands.valueOf(userInput.toUpperCase().trim());
                     switch (userCommand) {
                         case ADD:
-                            System.out.println("Какое животное(cat/dog/duck) добавить?");
+                            System.out.println("Введите команду, какое животное добавить(cat/dog/duck)");
                             String animalType = sc.next();
                             Animal animal = null;
                             System.out.println("Какое имя у животного?");
                             String name = sc.next();
                             System.out.println("Какой возраст у животного?");
-                            int age = sc.nextInt();
+                            //проверка ввода числа на тип данных int
+                            int age = CheckInputConsole.checkInt();
                             System.out.println("Какой вес животного?");
-                            int weight = sc.nextInt();
+                            int weight = CheckInputConsole.checkInt();
                             System.out.println("Укажите цвет животного?");
                             String color = sc.next();
                             switch (animalType) {
@@ -50,7 +54,9 @@ public class Application {
                                 case "dog" -> animal = new Dog(name, age, weight, color);
                                 case "duck" -> animal = new Duck(name, age, weight, color);
                             }
-                            animal.say();
+                            if (animal != null) {
+                                animal.say();
+                            }
                             animals.add(animal);
                             if (animal instanceof Duck) {
                                 ((Duck) animal).fly();
@@ -64,9 +70,6 @@ public class Application {
                         case EXIT:
                             System.out.println("Программа заверешена");
                             System.exit(0);
-//                    default:
-//                        System.out.println("Неверная команда, используйте add, list, exit");
-
                     }
                 }
             }
