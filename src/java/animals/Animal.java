@@ -71,14 +71,16 @@ public abstract class Animal {
     public String toString() {
         int age = getAge();
         int ageLastNumber = age % 10;
+        boolean ageLastNumberExclusion = (age % 100 >= 11) && (age % 100 <= 14);
         String old = "";
-
         if (ageLastNumber == 1)
             old = " год";
         else if (ageLastNumber == 0 || ageLastNumber >= 5 && ageLastNumber <= 9)
             old = " лет";
         else if (ageLastNumber >= 2 && ageLastNumber <= 4)
             old = " года";
+        if (ageLastNumberExclusion)
+            old = " лет";
         return "Привет! меня зовут " + name +
                 ", мне " + age + old +
                 ", я вешу - " + weight +

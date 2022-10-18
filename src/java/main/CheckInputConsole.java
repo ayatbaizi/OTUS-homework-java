@@ -20,7 +20,6 @@ public class CheckInputConsole {
         }
         return number;
     }
-
     public static String checkingMenuCommandsInput() {
         String userInputs;
         boolean check = false;
@@ -42,6 +41,7 @@ public class CheckInputConsole {
             return userInputs;
         }
     }
+
 }
 
 
