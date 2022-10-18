@@ -14,7 +14,7 @@ public class CheckInputConsole {
                 number = sc.nextInt();
                 c = true;
             } else {
-                System.out.println("Неверно!!! Было введено не число, либо слишком большое число. Повторно введите число:");
+                System.out.println("Неверно!!! Было введено не число, либо слишком большое число. Введите число:");
                 sc.nextLine();
             }
         }
