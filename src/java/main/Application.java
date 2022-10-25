@@ -23,8 +23,7 @@ public class Application {
             Commands userCommand = Commands.valueOf(userInput.toUpperCase().trim());
             switch (userCommand) {
                case ADD:
-                  System.out.println("Введите команду, какое животное добавить(cat/dog/duck)");
-                  String animalType = sc.next();
+                  String animalType = CheckInputConsole.checkAnimalType(sc);
                   Animal animal = null;
                   System.out.println("Какое имя у животного?");
                   String name = sc.next();
@@ -40,11 +39,7 @@ public class Application {
                      case "dog" -> animal = new Dog(name, age, weight, color);
                      case "duck" -> animal = new Duck(name, age, weight, color);
                   }
-                  if (animal == null) {
-                     System.out.println("Указанный тип животного не найден!");
-                     break;
-                  } else
-                     animal.say();
+                  animal.say();
                   animals.add(animal);
                   if (animal instanceof Duck) {
                      ((Duck) animal).fly();

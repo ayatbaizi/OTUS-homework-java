@@ -75,9 +75,9 @@ public abstract class Animal {
       String old = "";
       if (ageLastNumber == 1)
          old = " год";
-      else if (ageLastNumber == 0 || ageLastNumber >= 5 && ageLastNumber <= 9)
+      else if (ageLastNumber == 0 || ageLastNumber >= 5)
          old = " лет";
-      else if (ageLastNumber >= 2 && ageLastNumber <= 4)
+      else if (ageLastNumber >= 2)
          old = " года";
       if (ageLastNumberExclusion)
          old = " лет";

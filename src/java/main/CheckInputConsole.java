@@ -42,6 +42,26 @@ public class CheckInputConsole {
       }
    }
 
+   public static String checkAnimalType(Scanner sc) {
+      String[] arrayAnimal = new String[]{"cat", "dog", "duck"};
+      while (true) {
+         System.out.println("Введите команду, какое животное добавить(cat/dog/duck)");
+         boolean check = false;
+         String animalType = sc.next();
+         for (String listAnimals : arrayAnimal) {
+            if (animalType.equalsIgnoreCase(listAnimals)) {
+               check = true;
+               break;
+            }
+         }
+         if (!check) {
+            System.out.println("Неверная команда! Введите корректную команду!");
+            continue;
+         }
+         return animalType;
+      }
+
+   }
 }
 
 
